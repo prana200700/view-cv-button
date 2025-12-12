@@ -3,57 +3,100 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VIEW MY CV Button</title>
+<title>View My CV Button</title>
 
 <style>
+  /* Google font for DM Sans */
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+  /* Page reset – transparent, no extra space */
   body {
     margin: 0;
     padding: 0;
     background: transparent;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Small wrapper so the iframe only fits the button */
+  .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
-    font-family: 'DM Sans', sans-serif;
+    padding: 4px 0;
   }
 
-  /* The button */
+  a {
+    text-decoration: none;
+  }
+
+  /* MAIN BUTTON */
   .btn {
-    background: #c8b6ff;              /* lavender */
-    color: #fff;                      /* white text */
-    padding: clamp(14px, 3vw, 18px) clamp(26px, 5vw, 36px);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: clamp(12px, 3vw, 16px) clamp(24px, 5vw, 32px);
+    border-radius: 999px;
     border: none;
-    border-radius: 999px;             /* pill shape */
-    font-size: clamp(16px, 4vw, 20px);
     cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: 
-      background 0.25s ease, 
-      transform 0.2s ease,
-      box-shadow 0.25s ease;
+    font-size: clamp(15px, 4vw, 18px);
+    font-weight: 500;
+    color: #ffffff;
+    background: linear-gradient(120deg, #c8b6ff, #ffd9c0);
+    background-size: 200% 200%;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.22s ease,
+      background-position 0.6s ease;
   }
 
-  /* Hover animation */
+  /* Soft gradient “breathing” animation */
+  .btn {
+    animation: gradientFlow 6s ease-in-out infinite alternate;
+  }
+
+  @keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  /* Hover / focus – float */
   .btn:hover {
-    background: #b7a5f5;              /* darker lavender hover */
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
   }
 
-  /* Mobile press effect */
+  /* Mobile tap */
   .btn:active {
     transform: scale(0.96);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Tiny arrow icon */
+  .arrow {
+    font-size: 1.05em;
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+  }
+
+  /* Arrow glides on hover */
+  .btn:hover .arrow {
+    transform: translateX(4px) translateY(-2px);
   }
 </style>
-
 </head>
 
 <body>
-  <a href="YOUR_CV_LINK_HERE" target="_blank" rel="noopener noreferrer">
-    <button class="btn">
-      View My CV
-    </button>
-  </a>
+  <div class="wrapper">
+    <!-- 🔗 Put your CV link in the href below -->
+    <a href="file:///Users/pranamikarajesh/Downloads/PRANAMIKA%20RAJESH%20final%20CV.pdf.pdf" target="_blank" rel="noopener noreferrer">
+      <button class="btn">
+        View my CV
+        <span class="arrow">↗</span>
+      </button>
+    </a>
+  </div>
 </body>
 </html>
+
