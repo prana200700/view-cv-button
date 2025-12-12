@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>View My CV Button</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* The button */
+  .btn {
+    background: #c8b6ff;              /* lavender */
+    color: #fff;                      /* white text */
+    padding: clamp(14px, 3vw, 18px) clamp(26px, 5vw, 36px);
+    border: none;
+    border-radius: 999px;             /* pill shape */
+    font-size: clamp(16px, 4vw, 20px);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 
+      background 0.25s ease, 
+      transform 0.2s ease,
+      box-shadow 0.25s ease;
+  }
+
+  /* Hover animation */
+  .btn:hover {
+    background: #b7a5f5;              /* darker lavender hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  }
+
+  /* Mobile press effect */
+  .btn:active {
+    transform: scale(0.96);
+  }
+</style>
+
+</head>
+
+<body>
+  <a href="YOUR_CV_LINK_HERE" target="_blank" rel="noopener noreferrer">
+    <button class="btn">
+      View My CV
+    </button>
+  </a>
+</body>
+</html>
